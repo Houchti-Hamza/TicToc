@@ -2,6 +2,10 @@ package ai;
 
 import java.io.Serializable;
 
+
+//Test
+
+
 public class Layer implements Serializable{
 	public Layer(int l, int prev){
 		Length = l;
