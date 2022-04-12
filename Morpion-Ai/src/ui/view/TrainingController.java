@@ -101,7 +101,7 @@ public class TrainingController implements Initializable {
 
 			//on relie les élements de l'interface au valeurs du thread pour être actualisées
 			progressBar.progressProperty().bind(task.progressProperty());
-			progressCircle.progressProperty().bind(task.progressProperty());
+			//progressCircle.progressProperty().bind(task.progressProperty());
 			errorDisplay.textProperty().bind(task.messageProperty());
 
 			new Thread(task).start(); //on lance le thread d'entrainement
