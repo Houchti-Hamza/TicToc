@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="500.0" minWidth="833.0" prefHeight="400.0" prefWidth="0.0" style="-fx-background-color: #b6d7a8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.WinController">
+   <children>
+      <Button layoutX="119.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#jouerEncore" prefHeight="52.0" prefWidth="228.0" style="-fx-background-color: #1e81b0;" text="Nouvelle partie">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="477.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#retourMenu" prefHeight="52.0" prefWidth="212.0" style="-fx-background-color: #1e81b0;" text="Menu Principale">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Text fx:id="resultText" layoutX="69.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Bravo!" textAlignment="CENTER" wrappingWidth="696.0">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
