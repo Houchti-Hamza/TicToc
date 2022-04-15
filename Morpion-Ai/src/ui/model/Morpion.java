@@ -1,5 +1,7 @@
 package ui.model;
 
+import java.util.ArrayList;
+
 import ai.MultiLayerPerceptron;
 import ai.SigmoidalTransferFunction;
 import javafx.animation.KeyFrame;
@@ -10,21 +12,19 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
-
 public class Morpion {
 
     private MultiLayerPerceptron net = new MultiLayerPerceptron(new int[]{ 9, 128, 9}, 0.1, new SigmoidalTransferFunction());
 
     private GridPane gridp; //on fournit la gridpane ou se situent toutes les cases pouvant être jouées
-    private ArrayList<Integer> cases = new ArrayList<Integer>(); //on y défini les valeurs des cases (0: pas jouée, -1: joueur X, 1: joueur O)
+    private ArrayList<Integer> cases = new ArrayList<>(); //on y défini les valeurs des cases (0: pas jouée, -1: joueur X, 1: joueur O)
 
     public Morpion(GridPane gridp, String file, boolean with_AI) {
 
         if(with_AI) //si l'IA est activée:
         {
             System.out.println("Chargement du fichier..." + file);
-            net.load(file);//on charge le fichier associé
+            MultiLayerPerceptron.load(file);//on charge le fichier associé
         }
 
         for(int i = 0; i < 9; i++)
@@ -153,19 +153,19 @@ public class Morpion {
 
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(p1.styleProperty(), "-fx-background-color: rgba(0, 230, 64, 0)")), //on peint les cases en vert
-                new KeyFrame(Duration.seconds(1), new KeyValue(p1.styleProperty(), "-fx-background-color:rgba(0, 230, 64, 1)")) //transition d'une durée de 1 seconde
+                new KeyFrame(Duration.seconds(0.1), new KeyValue(p1.styleProperty(), "-fx-background-color:rgba(124,252,0, 1)")) //transition d'une durée de 1 seconde
 
 
         );
 
         Timeline timeline1 = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(p2.styleProperty(), "-fx-background-color: rgba(0, 230, 64, 0)")),
-                new KeyFrame(Duration.seconds(1), new KeyValue(p2.styleProperty(), "-fx-background-color:rgba(0, 230, 64, 1)"))
+                new KeyFrame(Duration.seconds(0.1), new KeyValue(p2.styleProperty(), "-fx-background-color:rgba(124,252,0, 1)"))
         );
 
         Timeline timeline2 = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(p3.styleProperty(), "-fx-background-color: rgba(0, 230, 64, 0)")),
-                new KeyFrame(Duration.seconds(1), new KeyValue(p3.styleProperty(), "-fx-background-color:rgba(0, 230, 64, 1)"))
+                new KeyFrame(Duration.seconds(0.1), new KeyValue(p3.styleProperty(), "-fx-background-color:rgba(124,252,0, 1)"))
         );
 
         SequentialTransition seqT = new SequentialTransition(); //on définit comme étant une transition séquentielle

@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 public class Training extends Task<Integer> {
 	
-	private double epochs = 10000000;
+	private double epochs = 1000000;
 
 	private Button button;
 
